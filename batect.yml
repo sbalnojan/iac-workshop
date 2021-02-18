@@ -1,0 +1,49 @@
+containers:
+  aws_cli:
+    image: amazon/aws-cli
+    working_directory: /
+    environment:
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+    #  AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+      AWS_SESSION_TOKEN: $AWS_SESSION_TOKEN
+      AWS_SECURITY_TOKEN: $AWS_SECURITY_TOKEN
+      AWS_ACCOUNT: $AWS_ACCOUNT
+      AWS_ROLE: $AWS_ROLE
+      NEW_ENDPOINT: "aws_mock"
+    volumes:
+      - local: my_solutions
+        container: /my_solutions
+        options: cached
+      - local: exercises
+        container: /exercises
+        options: cached
+  aws_mock:
+    image: motoserver/moto
+    ports:
+      - local: 5000
+        container: 5000
+
+tasks:
+  my_solution_1:
+    description: Run your solution 1....
+    group: Utility tasks
+    run:
+      container: aws_cli
+      entrypoint: /my_solutions/exercise_1
+
+  my_solution_2:
+    description: Run test for exercise 2, hopefully your correct solution...
+    group: Utility tasks
+    dependencies:
+      - aws_mock
+    run:
+      container: aws_cli
+      entrypoint: /bin/bash
+      #Run "'/exercises/libs/bats/bin/bats /exercises/exercise_2.bats'"
+
+  run_mock:
+    description: Launch mock AWS server at endpoint 127.0.0.1:5000
+    group: Utility tasks
+    run:
+      container: aws_mock
