@@ -30,31 +30,21 @@ containers:
 tasks:
   bats_demo:
     description: Run the bats demo...
-    group: Utility tasks
+    group: Demo tasks
     run:
       container: dummy
       entrypoint: /exercises/libs/bats/bin/bats
       command: /exercises/demo_test.bats
-
-  my_solution_1:
-    description: Run your solution 1....
-    group: Utility tasks
-    run:
-      container: aws_cli
-      entrypoint: /my_solutions/exercise_1
-
-  my_solution_2:
-    description: Run test for exercise 2, hopefully your correct solution...
-    group: Utility tasks
-    dependencies:
-      - aws_mock
-    run:
-      container: aws_cli
-      entrypoint: /bin/bash
-      #Run "'/exercises/libs/bats/bin/bats /exercises/exercise_2.bats'"
 
   run_mock:
     description: Launch mock AWS server at endpoint 127.0.0.1:5000
     group: Utility tasks
     run:
       container: aws_mock
+
+  aws_cli:
+    description: Start AWS CLI with your env. params.
+    group: Exercise tasks
+    run:
+      container: aws_cli
+      entrypoint: /bin/bash
