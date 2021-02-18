@@ -115,6 +115,12 @@ echo "Output is...$aws_cli_output"
   assert_equals aws_cli_output 1
 ```
 
+Run the file with
+
+```
+$ exercises/libs/bats/bin/bats exercises/exercise_2.bats
+```
+
 Perfect, that works.
 
 Question: Now run the test a second time... What happens?
@@ -170,7 +176,7 @@ Let's now take care of one important principle, "disposability".
 (For that we got to switch away from local testing though for now..)
 
 ```
-$ exercises/libs/bats/bin/bats exercises/exercise_4_1.bats
+$ exercises/libs/bats/bin/bats exercises/exercise_4.bats
 
 "Create a EC2 Instance with an apache webserver"
 ... ERROR
