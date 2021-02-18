@@ -182,6 +182,8 @@ $ exercises/libs/bats/bin/bats exercises/exercise_4.bats
 ... ERROR
 ```
 
+Task 4.1: Fix this!
+
 Task 4.2: Now let's make this "disposable". Terminate the instance. Does it restart?
 Nope... so let's take care of that (hint: you'll need an ASG...MAYBE you can
 find a module...)
