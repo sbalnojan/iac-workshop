@@ -22,6 +22,12 @@ How I like to "teach tech":
 
 3.  ./go is the way to go.
 
+Dependencies: You should have installed...
+
+- the aws CLI
+- terraform
+- ...
+
 ## WIP
 
 Three aspects aren't finished yet... 1. I haven't gotten around to finish the TDD part yet. 2nd. the intro to Pulumi & AWS CDK is still missing (and thus higher level constructs as well as the benefits of first grade programming languages in IaC.).
