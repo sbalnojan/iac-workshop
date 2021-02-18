@@ -196,6 +196,46 @@ and how would you solve it?
 Questions: Now turn to another tightly coupled principle. Is this continually available?
 If not, how would you solve it? ()
 
+### [WIP] Demo 5
+
+Great, so we got TF with it's custom DSL. Now let's look at Pulumi in Python.
+
+... (pulumi-example)[pulumi-example]
+
+... Check out how to set up our local dev environment again, by overriding
+the endpoint (get's boring doesn't it?)
+
+... setting up python venv stuff:
+
+```
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+```
+
+This is just the quick way, I'd actually suggest to use pipenv to manage
+anything here (see https://www.pulumi.com/docs/intro/languages/python/).
+
+... then run ```
+pulumi up
+
+```
+to get the stack up. Then
+```
+
+pulumi destroy
+
+```
+to kill it.
+
+Exercise 5: We want to experience a slight sight of the greatness of
+high level programming languages right? So let's for now simply create
+10 similar buckets, all private, but with a differing name. (
+  Hint: use functions & control constructs
+  )
+
+https://overflowed.dev/blog/how-to-deploy-localstack-with-pulumi/
+https://www.pulumi.com/docs/intro/concepts/resources/#providers
+
 ### Task Group 5
 
 AWS CDK = Python (or other) high level code that compiles to Cloudformation
@@ -208,3 +248,4 @@ With that in mind, let us finally take a look at the AWS CDK.
 ## Ressources
 
 All the BATS magic is taken from https://medium.com/@pimterry/testing-your-shell-scripts-with-bats-abfca9bdc5b9.
+```
