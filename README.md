@@ -4,6 +4,7 @@ In this "workshop", I introduce a bunch of tools
 
 - the AWS CLI
 - Terraform
+- Pulumi
 
 (Pulumi & AWS CDK possibly to come later...)
 
@@ -13,6 +14,7 @@ And a list of concepts & principles including:
 - Task Group 2: TDD for IaC, Declarative Code, IaC State, Terraforms Rule No. 1 (& mocking, local unit testing IaC)
 - Task Group 3: Intro TF.
 - Task Group 4: Disposability, Continual Availability. (& Modular programming is great!)
+- Task Group 5: High Level Programming Languages & their uses in IaC.
 
 How I like to "teach tech":
 
