@@ -11,6 +11,13 @@ containers:
       AWS_ACCOUNT: $AWS_ACCOUNT
       AWS_ROLE: $AWS_ROLE
       NEW_ENDPOINT: "aws_mock"
+    volumes:
+      - local: my_solutions
+        container: /my_solutions
+        options: cached
+      - local: exercises
+        container: /exercises
+        options: cached
   dummy:
     image: bash:5.0
     working_directory: /
@@ -48,3 +55,11 @@ tasks:
     run:
       container: aws_cli
       entrypoint: /bin/bash
+
+  run_sol_1_3:
+    description: Start AWS CLI with your env. params.
+    group: Exercise tasks
+    run:
+      container: aws_cli
+      entrypoint: /my_solutions/exercise_1_3
+      command: my_bucket
