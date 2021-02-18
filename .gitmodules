@@ -1,0 +1,9 @@
+[submodule "exercises/libs/bats"]
+	path = exercises/libs/bats
+	url = https://github.com/sstephenson/bats
+[submodule "exercises/libs/bats-support"]
+	path = exercises/libs/bats-support
+	url = https://github.com/ztombol/bats-support
+[submodule "exercises/libs/bats-assert"]
+	path = exercises/libs/bats-assert
+	url = https://github.com/ztombol/bats-assert
