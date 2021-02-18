@@ -108,7 +108,7 @@ Let's check if our create bucket script really works...
 ```
 ./../my_solutions/exercise_2 my-bucket test
 
-aws_cli_output=$(aws s3api get-bucket-location --bucket my-bucket --endpoint-url http://127.0.0.1:5000/)
+aws_cli_output=$(aws s3api get-bucket-location --bucket my-bucket --endpoint-url http://127.0.0.1:5000/ | jq length)
 
 echo "Output is...$aws_cli_output"
 
