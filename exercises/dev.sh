@@ -1,0 +1,3 @@
+#! /bin/sh
+# install entr...
+ls -d * | entr ./test.sh
