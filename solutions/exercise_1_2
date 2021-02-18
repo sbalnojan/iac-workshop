@@ -1,0 +1,14 @@
+#! /bin/sh
+# Use: ./exercise_1 duh
+DEFAULT_REGION="eu-central-1"
+BUCKET_CONF='LocationConstraint='$DEFAULT_REGION''
+echo "Creating a new AWS S3 bucket..."
+
+echo $BUCKET_CONF
+aws s3api create-bucket --bucket my_bucket --create-bucket-configuration $BUCKET_CONF
+
+echo "Done creating bucket, see here: ..."
+
+aws s3 ls
+
+echo "Exiting..."

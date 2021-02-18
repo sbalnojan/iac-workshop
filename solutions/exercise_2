@@ -1,0 +1,23 @@
+#! /bin/sh
+# Use: ./exercise_1 duh
+YOUR_BUCKET=${1}
+TEST_STRING=""
+if [ -z ${2+x} ]; then echo "productive mode...";
+else
+  echo "test var is set; entering test mode...";
+  TEST_STRING="--endpoint-url http://127.0.0.1:5000/";
+ fi
+
+DEFAULT_REGION="eu-central-1"
+BUCKET_CONF='LocationConstraint='$DEFAULT_REGION''
+echo "Creating a new AWS S3 bucket named: $YOUR_BUCKET ..."
+echo $BUCKET_CONF
+aws s3api create-bucket --bucket $YOUR_BUCKET --create-bucket-configuration $BUCKET_CONF $TEST_STRING
+
+echo "Done creating bucket, see here: ..."
+
+aws s3 ls $TEST_STRING
+
+echo "Exiting..."
+
+aws s3api get-bucket-location --bucket my-bucket --endpoint-url http://127.0.0.1:5000/
