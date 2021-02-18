@@ -11,6 +11,9 @@ containers:
       AWS_ACCOUNT: $AWS_ACCOUNT
       AWS_ROLE: $AWS_ROLE
       NEW_ENDPOINT: "aws_mock"
+  dummy:
+    image: bash:5.0
+    working_directory: /
     volumes:
       - local: my_solutions
         container: /my_solutions
@@ -25,6 +28,14 @@ containers:
         container: 5000
 
 tasks:
+  bats_demo:
+    description: Run the bats demo...
+    group: Utility tasks
+    run:
+      container: dummy
+      entrypoint: /exercises/libs/bats/bin/bats
+      command: /exercises/demo_test.bats
+
   my_solution_1:
     description: Run your solution 1....
     group: Utility tasks
