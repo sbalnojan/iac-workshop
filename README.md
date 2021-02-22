@@ -28,7 +28,7 @@ Dependencies: You should have installed...
 
 - the aws CLI
 - terraform
-- ...
+- the pulumi CLI
 
 ## WIP
 
@@ -39,13 +39,13 @@ Three aspects aren't finished yet... 1. I haven't gotten around to finish the TD
 
 Tool: AWS CLI
 
-Exercise 1: Create a S3 bucket, non-public access, with your name.
+<mark>Exercise 1</mark>: Create a S3 bucket, non-public access, with your name.
 
-Exercise 2: Ok great, now take a look at what you did. Do you think
+<mark>Exercise 2</mark>: Ok great, now take a look at what you did. Do you think
 someone else could reproduce that? Make it reproducible with the minimal
 amount of effort.
 
-Exercise 3: Nice, now take a final look at what you created and see whether
+<mark>Exercise 3</mark>: Nice, now take a final look at what you created and see whether
 it adhere's to good practices. Does someone else has to edit it to run it
 as well with e.g. a different name? Adjust that.
 
@@ -62,7 +62,7 @@ styleguide (https://github.com/gruntwork-io/bash-commons)
 Now we've hacked a bit. Let's turn to a more serious workflow: A test-driven
 workflow.
 
-Question: We're going to mock stuff now. Why do we need a mock/stub NOW?
+<mark>Question</mark>: We're going to mock stuff now. Why do we need a mock/stub NOW?
 And what is the difference? (What's the alternative?)
 
 ### Running local AWS tests
@@ -128,11 +128,11 @@ $ exercises/libs/bats/bin/bats exercises/exercise_2.bats
 
 Perfect, that works.
 
-Question: Now run the test a second time... What happens?
+<mark>Question</mark>: Now run the test a second time... What happens?
 
 (Uh oh, new concept: Declarative vs. Imperative code...)
 
-Question 2: What if we were to randomize the name?
+<mark>Question 2</mark>: What if we were to randomize the name?
 
 Both problems could be handled with by:
 
@@ -187,18 +187,18 @@ $ exercises/libs/bats/bin/bats exercises/exercise_4.bats
 ... ERROR
 ```
 
-Task 4.1: Fix this!
+<mark>Task 4.1</mark>: Fix this!
 
-Task 4.2: Now let's make this "disposable". Terminate the instance. Does it restart?
+<mark>Task 4.2</mark>: Now let's make this "disposable". Terminate the instance. Does it restart?
 Nope... so let's take care of that (hint: you'll need an ASG...MAYBE you can
 find a module...)
 
 #### ...(incomplete)
 
-Questions: Is this now really "disposable"? What's missing
+<mark>Questions</mark>: Is this now really "disposable"? What's missing
 and how would you solve it?
 
-Questions: Now turn to another tightly coupled principle. Is this continually available?
+<mark>Questions</mark>: Now turn to another tightly coupled principle. Is this continually available?
 If not, how would you solve it? ()
 
 ### [WIP] Demo 5
@@ -234,7 +234,7 @@ pulumi destroy
 
 to kill it.
 
-Exercise 5: We want to experience a slight sight of the greatness of
+<mark>Exercise 5</mark>: We want to experience a slight sight of the greatness of
 high level programming languages right? So let's for now simply create
 10 similar buckets, all private, but with a differing name. (
 Hint: use functions & control constructs
@@ -243,7 +243,7 @@ Hint: use functions & control constructs
 https://overflowed.dev/blog/how-to-deploy-localstack-with-pulumi/
 https://www.pulumi.com/docs/intro/concepts/resources/#providers
 
-### Task Group 5
+### Task Group 6
 
 AWS CDK = Python (or other) high level code that compiles to Cloudformation
 (long bulky JSON), and thus is able to use Stacks as cool deployment &
