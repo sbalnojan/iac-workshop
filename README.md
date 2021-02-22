@@ -62,6 +62,9 @@ styleguide (https://github.com/gruntwork-io/bash-commons)
 Now we've hacked a bit. Let's turn to a more serious workflow: A test-driven
 workflow.
 
+Question: We're going to mock stuff now. Why do we need a mock/stub NOW?
+And what is the difference? (What's the alternative?)
+
 ### Running local AWS tests
 
 I also like to have a local dev environment, so I put one into this repository.
@@ -217,23 +220,25 @@ venv/bin/pip install -r requirements.txt
 This is just the quick way, I'd actually suggest to use pipenv to manage
 anything here (see https://www.pulumi.com/docs/intro/languages/python/).
 
-... then run ```
+... then run
+
+```
 pulumi up
-
 ```
+
 to get the stack up. Then
-```
 
+```
 pulumi destroy
-
 ```
+
 to kill it.
 
 Exercise 5: We want to experience a slight sight of the greatness of
 high level programming languages right? So let's for now simply create
 10 similar buckets, all private, but with a differing name. (
-  Hint: use functions & control constructs
-  )
+Hint: use functions & control constructs
+)
 
 https://overflowed.dev/blog/how-to-deploy-localstack-with-pulumi/
 https://www.pulumi.com/docs/intro/concepts/resources/#providers
@@ -250,4 +255,7 @@ With that in mind, let us finally take a look at the AWS CDK.
 ## Ressources
 
 All the BATS magic is taken from https://medium.com/@pimterry/testing-your-shell-scripts-with-bats-abfca9bdc5b9.
+
+```
+
 ```
