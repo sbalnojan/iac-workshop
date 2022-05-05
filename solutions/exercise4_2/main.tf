@@ -25,7 +25,7 @@ module "asg" {
   lc_name = "example-lc"
 
   image_id        = "ami-0233214e13e500f77"
-  instance_type   = "t2.micro"
+  instance_type   = "t3.micro"
   #security_groups = ["sg-12345678"]
 
   ebs_block_device = [

@@ -57,9 +57,9 @@ tasks:
       entrypoint: /bin/bash
 
   run_sol_1_3:
-    description: Start AWS CLI with your env. params.
+    description: Run the solution to ex 1.3
     group: Exercise tasks
     run:
       container: aws_cli
       entrypoint: /my_solutions/exercise_1_3
-      command: my_bucket
+      command: my-bucket345

@@ -1,5 +1,5 @@
 #! /bin/sh
-# Use: ./exercise_1 duh
+# Use: ./exercise_1_2
 DEFAULT_REGION="eu-central-1"
 BUCKET_CONF='LocationConstraint='$DEFAULT_REGION''
 echo "Creating a new AWS S3 bucket..."
